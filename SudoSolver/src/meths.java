@@ -10,16 +10,29 @@ public class meths {
         Scanner indice = new Scanner(System.in);
         Scanner values = new Scanner(System.in);
 
-        int indiceNumber = Integer.parseInt(indice.nextLine());
+        
         int valuesNumber = Integer.parseInt(values.nextLine());
+        int tableNumber  = 1;
 
-        //------------------------------------------
-        for (int i = 1; i <= 6; i++) {
-            System.out.println("Table N°" + i + " (from left to right)");
-            System.out.print("How many indices: ");
-            
+        System.out.print("How many indices: ");
+        int indiceNumber = Integer.parseInt(indice.nextLine());
+
+        
+        //-------------------------------------------------------
+        for (int t = 0; t < indiceNumber; t++) {
+            for (int i = 1; i <= 9; i++) {
+                for (int j = 1; j <= 9; j++) {
+                    System.out.println("Table N°" + tableNumber + " (from left to right)");
+                    System.out.println("--------------------------------------");
+    
+                     if(i == j && i % 3 == 0) {
+                         tableNumber++;
+                    }
+                }
+                
+            }
         }
-        //-----------------------------------------
+        //------------------------------------------------------
     }
     
     public static void enterValues (int[][] table, int lng){
@@ -27,11 +40,9 @@ public class meths {
         
         for (int i = 0; i < lng; i++) {
             for (int j = 0; j < lng; j++) {
-                String sudoString = read.nextLine();
-                int sudoNumber = Integer.parseInt(sudoString);
                 
                 //------------------------------------------
-                table[i][j] = sudoNumber;
+                table[i][j] = 0;
                 //------------------------------------------
                 
             }
